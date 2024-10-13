@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// react imports
+import {React, useEffect} from "react";
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
+
+// local imports
+import "./index.css";
+import Navbar from "./components/Navbar";
+import Wrapper from "./components/Wrapper";
+
+// hooks
+import useDarkMode from "./hooks/useDarkMode";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let path = {domain: "finance", topic: "corporate-finance", article: "stock-valuation", paragraph: "determining-discount-rate"};
+
+    // dark mode
+    const [darkMode, setDarkMode] = useDarkMode();
+    const toggleTheme = () => setDarkMode((prev) => !prev);
+    useEffect(() => {
+        document.body.setAttribute("data-theme", darkMode ? "dark" : "light");
+    }, [darkMode]);
+
+    return (
+        <Router>
+            <Navbar 
+                path={path}
+                darkMode={darkMode} 
+                toggleTheme={toggleTheme}
+            />
+            <Wrapper 
+                path={path}
+                darkMode={darkMode}
+            />
+        </Router>
+    );
 }
 
 export default App;
