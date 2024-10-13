@@ -9,12 +9,19 @@ import Navbar from "./components/Navbar";
 import useDarkMode from "./hooks/useDarkMode";
 
 function App() {
+    // dark mode logic
     const [isDarkMode, setIsDarkMode] = useDarkMode();
     const toggleDarkMode = () => setIsDarkMode((mode) => !mode);
+    useEffect(() => {
+        document.body.setAttribute("data-theme", isDarkMode ? "dark" : "light");
+    }, [isDarkMode]);
 
     return (
         <Router>
-            <Navbar />
+            <Navbar 
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+            />
             <br/><br/>
             <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
             <p>{isDarkMode?"true":"false"}</p>

@@ -19,7 +19,6 @@ function useDarkMode() {
         else localStorage.setItem("theme", "light");
     }, [isDarkMode]); // run effect when isDarkMode changes
 
-
     return [isDarkMode, setIsDarkMode];
 }
 
