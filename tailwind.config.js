@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
       colors: {
         bgDark: "#0E1116",
         bgLight: "#FFFFFF",
@@ -27,6 +28,7 @@ module.exports = {
         
         lightBlue: "#89BEF5",
       },
+
       fontFamily: {
         lbl: ["Lato-Black", "sans-serif"],
         lbli: ["Lato-BlackItalic", "sans-serif"],
