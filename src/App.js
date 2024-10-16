@@ -49,7 +49,7 @@ function App() {
                         Created by
                         <span className="font-lb">&nbsp;thepeski</span>
                         <span>.&nbsp;Contribute on&nbsp;</span>
-                        <a href="http://www.github.com" className={`hover:underline ${isDarkMode ? "text-blueDark" : "text-blueLight"}`}>GitHub</a>
+                        <a href="https://github.com/thepeski/thepeski-com" className={`hover:underline ${isDarkMode ? "text-blueDark" : "text-blueLight"}`}>GitHub</a>
                         <span>.</span>
                     </div>
 
