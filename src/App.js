@@ -34,7 +34,7 @@ function App() {
 
             {/* content */}
             <div className={`min-h-screen ${isDarkMode ? "bg-bgDark" : "bg-bgLight"}`}>
-                <div className="px-40 pt-44 pb-24">
+                <div className="mx-auto min-w-[200px] max-w-[1200px] pt-40 md:pt-48 pb-24 px-4 md:px-40">
 
                     {/* pages */}
                     <Routes>
